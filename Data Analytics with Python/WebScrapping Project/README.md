@@ -1,4 +1,4 @@
-# Assignment_2 Portfolio
+# Assignment_2 - Web Scrapping 
 
 ## Introduction
 This README.md file showcases my project on web scraping and data analysis based on the assignment prompts. The project involves scraping data from a website and analyzing the information to answer specific questions related to the funding ecosystem for startups in India.
@@ -7,7 +7,7 @@ This README.md file showcases my project on web scraping and data analysis based
 
 ### Question 1: Web Scraping
 - Utilized the BeautifulSoup library to scrape data from the website "https://www.goodreads.com/quotes".
-- Extracted details for each posting, including the quote text, author, and tags.
+- Extracted details for each posting, including the quoted text, author, and tags.
 
 ### Question 2: Data Analysis
 - Analyzed the scraped data to answer various questions related to the funding ecosystem for startups in India.
