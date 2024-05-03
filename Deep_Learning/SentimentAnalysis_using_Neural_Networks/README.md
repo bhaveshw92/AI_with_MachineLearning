@@ -1,7 +1,7 @@
 # YouTube Comments Sentiment Analysis
 
 ## Objectives
-- Develop a sentiment analysis tool to automatically categorize comments as positive, negative, or neutral.
+- Develop a sentiment analysis tool to automatically categorize comments as positive, or negative.
 - Provide content creators with an efficient means of processing feedback without being overwhelmed.
 - Enable data-driven decision-making by extracting valuable insights from audience comments.
 - Improve the content creation experience by facilitating more focused interaction with viewers.
