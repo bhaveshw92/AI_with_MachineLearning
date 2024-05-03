@@ -36,3 +36,6 @@
 - By automating the comment categorization process, content creators can efficiently process feedback and make data-driven decisions.
 - The implementation of measures to ensure privacy and security demonstrates a commitment to ethical considerations in AI and ML projects.
 
+## Note
+- A ResearchDocumentation.txt file is attached as a guide for implementing this project.
+
