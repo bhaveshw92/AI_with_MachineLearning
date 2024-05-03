@@ -1,0 +1,114 @@
+Deep Learning Final Project Documentation
+
+https://www.youtube.com/watch?v=fklHBWow8vE&ab_channel=StrataScratch
+
+
+#Keys
+How to Get a YouTube API Key
+
+	Log in to Google Developers Console.
+	Create a new project.
+	On the new project dashboard, click Explore & Enable APIs.
+	In the library, navigate to YouTube Data API v3 under YouTube APIs.
+	Enable the API.
+	Create a credential.
+	A screen will appear with the API key.
+
+	Which API are you using?
+	Select an API
+	YouTube Data API v3
+
+	What data will you be accessing? *
+	Public data
+	Google data that is publicly available, like public Maps data showing restaurant information. This will create an API key.
+
+How to Get a Youtube Channel ID
+	Check the ID in Developer Tools
+	Navigate to the channel for which you're interested in fetching data
+	Open Developer Tools in your browser (F12 on Windows/Linux or option + ⌘ + J on OSX)
+	Click on the Network tab
+	In the filter box type "browse" to filter the list of network requests
+	Click on any interactive element of the channel page, e.g. the Home or Videos tab
+	In the right side panel you should see a network request to the /browse endpoint. Click on it and the Channel ID will appear in the Request Payload under the browseId parameter
+
+	Alternative 
+
+	docid: byYlC2cagLw
+	https://www.youtube.com/watch?v=byYlC2cagLw&ab_channel=TheWallStreetJournal
+	v=byYlC2cagLw is the video Id for extracting the comments
+
+
+==============
+
+
+https://www.youtube.com/watch?v=bk-nQ7HF6k4&ab_channel=TheDiaryOfACEO
+
+Presentation
+
+Data Extraction:
+	Set Up API Access
+		Acquire an API key from the Google Cloud Console. This key is necessary to authenticate and authorize requests to the YouTube Data API.
+	
+	Build YouTube API Request
+		Specify parameters such as the video ID, part names (e.g., 'snippet', 'replies'), and other relevant parameters to tailor the request to your needs and Execute API Request
+	
+	Extract Relevant Information
+		Extract the relevant information from the API response, such as comment text, author information, like counts, reply counts, and other metadata and save as csv.
+	
+	Install and Import Necessary Libraries such as Nltk
+		Install the NLTK library, which includes VADER 
+	
+	Tokenize and Preprocess Text
+		Tokenize the comment text into individual words or tokens.  Apply any necessary preprocessing steps, such as converting text to lowercase, removing stopwords, or handling special characters.
+
+	Initialize VADER Sentiment Analyzer which assigns sentiment scores to text based on a pre-built lexicon.
+	
+	Calculate Sentiment Scores - Compound score.
+		Use the VADER sentiment analyzer to calculate sentiment scores, including a compound score, for each processed comment.
+	Categorize Sentiments as 'positive', 'negative', or 'neutral'.
+		This step involves setting thresholds or rules based on the values of sentiment scores.
+			If the sentiment score is greater than 0, it categorizes as 'positive'.
+			If the sentiment score is less than 0, it categorizes as 'negative'.
+			If the sentiment score is exactly 0 or falls within a very small range around 0, it categorizes as 'neutral'.
+
+
+Manual Review:
+	Validate whether the sentiments assigned by the automated tool align with human interpretation.
+	Observations and feedback from human reviewers can provide valuable insights for refining the sentiment analysis model.
+	Understanding of the subjectivity and tone of comments, considering factors that automated tools may not capture fully.
+
+Model Training:
+	Tokenization and Padding - Processed comments into numerical sequences using the Tokenizer, Pad the sequences to ensure uniform length
+	GloVe embeddings
+		GloVe embedding is a way to represent words as vectors in a high-dimensional space.
+		Each word has a unique vector that captures its meaning based on the context it appears in.
+		These pre-trained vectors already contain semantic information about words
+	
+	Build the Neural Network Model
+		ANN
+		CNN
+		LSTM
+	Compile the Model
+	Train the Model
+	Evaluate and Visualize Results - Plot training and validation accuracy and loss over epochs
+
+	
+Defining Use Cases for Sentiment Analysis on YouTube:
+	Audience Feedback Analysis:
+		Identify positive feedback to understand what content resonates well, and address negative feedback to improve future content.
+	Content Optimization:
+		Tailor content strategy, topics, and style based on sentiments expressed in comments for increased engagement.
+	Monitoring Brand Perception:
+		Identify sentiment trends related to the brand, address issues promptly, and enhance overall brand reputation.
+	Adapting to Viewer Sentiment during Livestreams:
+		For livestream content, real-time sentiment analysis helps creators adapt to viewer reactions.
+	Measuring Video Impact:
+		Creators can measure the success of different types of content and adjust their strategy based on emotional responses.
+
+
+This model is applicable for analyzing sentiments in product reviews as well.
+
+
+The compound score is a metric that combines positive, negative, and neutral scores into a single value. The resulting scores are stored in a new column named 'sentiment_score'.
+
+
