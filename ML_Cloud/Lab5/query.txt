@@ -1,0 +1,10 @@
+Drop Unused Columns 
+
+in our case id is not used.
+
+
+SELECT age, hypertension, heart_disease, avg_glucose_level, bmi, stroke, No, Yes, Govt_job, Never_worked, Private, Self-employed, Rural, Urban FROM df;
+
+
+/* Table is available as variable `df`*/
+SELECT age, hypertension, heart_disease, avg_glucose_level, bmi, stroke, No, Yes, Govt_job, Never_worked, Private FROM df;
