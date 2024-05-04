@@ -1,0 +1,153 @@
+Key	Value - 003
+_tuning_objective_metric	validation:mse
+alpha	0.8156821282803342
+eta	0.8996756730494361
+eval_metric	auc
+max_depth	8
+min_child_weight	6.765276582553282
+num_round	100
+objective	binary:hinge
+rate_drop	0.3
+tweedie_variance_power	1.4
+
+
+Key	Value - 002
+_tuning_objective_metric	validation:mse
+alpha	1.6211136395301229
+eta	0.5190364244759926
+eval_metric	auc
+max_depth	7
+min_child_weight	4.677869036575754
+num_round	100
+objective	binary:hinge
+rate_drop	0.3
+tweedie_variance_power	1.4
+
+
+Key	Value - 001
+_tuning_objective_metric	validation:mse
+alpha	1.4504916951086293
+eta	0.3100443606024935
+eval_metric	auc
+max_depth	3
+min_child_weight	1.0002521318610684
+num_round	100
+objective	binary:hinge
+rate_drop	0.3
+tweedie_variance_power	1.4
+
+
+Key	Value - 004
+_tuning_objective_metric	validation:mse
+alpha	0.23982719686885634
+eta	0.8808992951540304
+eval_metric	auc
+max_depth	6
+min_child_weight	2.855587627615672
+num_round	100
+objective	binary:hinge
+rate_drop	0.3
+tweedie_variance_power	1.4
+
+
+
+3 - alpha	0.8156821282803342
+2 - alpha	1.6211136395301229
+1 - alpha	1.4504916951086293
+
+4 - alpha	0.23982719686885634
+
+
+
+max_depth = 7
+aplha = 1.43
+eta = 0.229
+min_child_weight = 2.910
+
+
+If alpha is High  then Final Objective Value will be low as they have a negative coorelation of -0.76.
+
+If eta high then then Final Objective Value will be high and eta low then the Final Objective Value will be low, as they have a positive coorelation of 0.74.
+
+If Max depth high then Final Objective Value will be high as they have a positive coorelation of 0.27.
+
+min_child_weight is almost close to 0 0.08 so it has a very low positive coorelation with the Final Objective Value.
+
+best Model Values
+
+alpha	1.4504916951086293 + 0.50
+eta	0.3100443606024935 - 0.20
+max_depth	3 - 3
+min_child_weight	1.0002521318610684 - 1
+
+
+alpha	1.4504916951086293 + 0.50
+eta	0.3100443606024935 - 0.20
+max_depth	3 - 5
+min_child_weight	1.0002521318610684 - 1
+
+
+alpha - 1.95
+eta 0.11
+max_depth 5.0
+min_child_weight 1.00
+
+
+from sagemaker.image_uris import retrieve
+
+training_image = retrieve(framework="xgboost", region=region, version="1.5-1")
+
+s3_input_train = "s3://{}/{}/train".format(bucket, prefix)
+s3_input_validation = "s3://{}/{}/validation/".format(bucket, prefix)
+
+training_job_definition = {
+    "AlgorithmSpecification": {"TrainingImage": training_image, "TrainingInputMode": "File"},
+    "InputDataConfig": [
+        {
+            "ChannelName": "train",
+            "CompressionType": "None",
+            "ContentType": "csv",
+            "DataSource": {
+                "S3DataSource": {
+                    "S3DataDistributionType": "FullyReplicated",
+                    "S3DataType": "S3Prefix",
+                    "S3Uri": s3_input_train,
+                }
+            },
+        },
+        {
+            "ChannelName": "validation",
+            "CompressionType": "None",
+            "ContentType": "csv",
+            "DataSource": {
+                "S3DataSource": {
+                    "S3DataDistributionType": "FullyReplicated",
+                    "S3DataType": "S3Prefix",
+                    "S3Uri": s3_input_validation,
+                }
+            },
+        },
+    ],
+    "OutputDataConfig": {"S3OutputPath": "s3://{}/{}/output".format(bucket, prefix)},
+    "ResourceConfig": {"InstanceCount": 1, "InstanceType": "ml.m4.xlarge", "VolumeSizeInGB": 10},
+    "RoleArn": role,
+    "StaticHyperParameters": {
+        "eval_metric": "auc",
+        "num_round": "100",
+        "objective": "binary:hinge",
+        "rate_drop": "0.3",
+        "tweedie_variance_power": "1.4",
+        "alpha":"1.95",
+        "eta":"0.11",
+        "max_depth":"5.0",
+        "min_child_weight":"1.00"
+    },
+    "StoppingCondition": {"MaxRuntimeInSeconds": 43200},
+}
+
+
+smclient.create_hyper_parameter_tuning_job(
+    HyperParameterTuningJobName=tuning_job_name,
+    HyperParameterTuningJobConfig={},
+    TrainingJobDefinition=training_job_definition,
+)
