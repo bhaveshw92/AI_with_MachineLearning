@@ -9,6 +9,7 @@ The Spike dataset consists of time series data. The LSTM model is designed to pr
 
 ### Heterogeneous_accelerometer_HAR Dataset
 The Heterogeneous_accelerometer_HAR dataset contains sensor data, which is a time series data representing six different human actions. The LSTM model is designed to classify the data into the labels provided in the dataset.
+Link: https://archive.ics.uci.edu/dataset/344/heterogeneity+activity+recognition
 
 ## Instructions
 
