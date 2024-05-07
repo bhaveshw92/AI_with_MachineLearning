@@ -1,4 +1,4 @@
-# AI and ML Final Project: Deployment Guardrail and Shadow Testing in SageMaker
+# ML in Cloud Final Project: Deployment Guardrail and Shadow Testing in SageMaker
 
 ## Background
 Direct marketing, either through mail, email, phone, etc., is a common tactic to acquire customers. Predicting those potential customers based on readily available information like demographics, past interactions, and environmental factors is a common machine learning problem. This project focuses on training a model to predict if a customer will enroll for a term deposit at a bank, after one or more phone calls. Hyperparameter tuning will be used to try multiple hyperparameter settings and produce the best model. Use Deployment Guardrail and Shadow Testing for traffic Shifting implementation.
