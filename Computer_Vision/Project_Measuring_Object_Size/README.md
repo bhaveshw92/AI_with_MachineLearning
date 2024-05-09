@@ -14,7 +14,7 @@ In this scenario, we will focus on finding the size of geometrical objects of di
 
 2. **Object Detection**: Use OpenCV to detect and identify the geometrical objects present in the image. Implement algorithms to recognize shapes such as triangles, squares/rectangles, pentagons, hexagons, circles, and unknown shapes.
 
-3. **Size Measurement**: Once the objects are detected, measure their size using appropriate techniques. For example, measure the length of sides for polygons, diameter for circles, and any other relevant parameters.
+3. **Size Measurement**: Once the objects are detected, measure their size using appropriate techniques. For example, measure the length of sides for polygons, the diameter for circles, and any other relevant parameters.
 
 4. **Display Results**: Display the detected objects along with their respective sizes. Visualize the results using graphical representations if necessary.
 
@@ -23,8 +23,8 @@ In this scenario, we will focus on finding the size of geometrical objects of di
 ## Files Included
 
 - `object_size_measurement.ipynb`: Jupyter Notebook containing Python code for object detection and size measurement using OpenCV.
-- `sample_image.jpg`: Sample image containing geometrical objects for testing the code.
-- `README.md`: This README file providing an overview of the project, instructions, and guidelines for implementation.
+- `Geometrical_Shapes.png`: Sample image containing geometrical objects for testing the code.
+- `README.md`: This README file provides an overview of the project, instructions, and guidelines for implementation.
 
 ## Conclusion
 
