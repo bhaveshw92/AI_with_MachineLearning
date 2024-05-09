@@ -1,40 +1,36 @@
-# DCGAN for CIFAR-10 Image Generation
+# Measuring Object Size with OpenCV
 
 ## Introduction
 
-In this assignment, we aim to design and implement a Deep Convolutional Generative Adversarial Network (DCGAN) capable of generating CIFAR-10 images. The CIFAR-10 dataset consists of 60,000 32x32 color images in 10 classes, with 6,000 images per class. The goal is to train the DCGAN model to learn the underlying distribution of CIFAR-10 images and generate realistic images that resemble the ones in the dataset.
+In this project, we aim to measure the size of geometrical objects of different shapes using OpenCV, an open-source computer vision library. The project focuses on detecting and measuring the size of objects such as triangles, squares/rectangles, pentagons, hexagons, circles, and unknown shapes present in a given image.
+
+## Illustration (Second Scenario)
+
+In this scenario, we will focus on finding the size of geometrical objects of different shapes, including triangles, squares/rectangles, pentagons, hexagons, circles, and unknown shapes. The objective is to detect each shape in the image and measure its size accurately.
 
 ## Instructions
 
-1. **Dataset Download**: Download the CIFAR-10 dataset from the official website or pytorch - torchvision.datasets.CIFAR10
+1. **Image Acquisition**: Obtain the image containing the geometrical objects of interest. Ensure that the image is clear and properly captured to facilitate accurate object detection.
 
-2. **Data Preprocessing**: Preprocess the dataset by resizing the images to a suitable size and normalizing the pixel values.
+2. **Object Detection**: Use OpenCV to detect and identify the geometrical objects present in the image. Implement algorithms to recognize shapes such as triangles, squares/rectangles, pentagons, hexagons, circles, and unknown shapes.
 
-3. **Model Design**: Design the architecture of the DCGAN model using PyTorch. The generator and discriminator networks should be defined with appropriate layers and activation functions.
+3. **Size Measurement**: Once the objects are detected, measure their size using appropriate techniques. For example, measure the length of sides for polygons, diameter for circles, and any other relevant parameters.
 
-4. **Training**: Train the DCGAN model on the preprocessed CIFAR-10 dataset. Use techniques such as mini-batch gradient descent and adversarial training to optimize the model parameters.
+4. **Display Results**: Display the detected objects along with their respective sizes. Visualize the results using graphical representations if necessary.
 
-5. **Image Generation**: After training, generate CIFAR-10-like images using the trained generator network. Save and visualize the generated images to assess their quality.
-
-6. **Evaluation**: Evaluate the quality of the generated images using visual inspection.
-
-7. **Documentation**: Provide detailed documentation of the model architecture, training procedure, and evaluation results with code comments.
+5. **Documentation**: Provide detailed documentation of the project, including the approach used for object detection, size measurement techniques, and any challenges faced during implementation.
 
 ## Files Included
 
-- `DCGAN_CIFAR10.ipynb`: Jupyter Notebook containing Python code for model implementation, training, and evaluation.
-- `README.md`: This README file providing an overview of the assignment, instructions, and guidelines for implementation.
-
-## Model Architecture
-
-The DCGAN model consists of two main components: the generator and the discriminator. The generator takes random noise as input and generates fake images, while the discriminator tries to distinguish between real and fake images. Both networks are trained simultaneously in an adversarial manner.
+- `object_size_measurement.ipynb`: Jupyter Notebook containing Python code for object detection and size measurement using OpenCV.
+- `sample_image.jpg`: Sample image containing geometrical objects for testing the code.
+- `README.md`: This README file providing an overview of the project, instructions, and guidelines for implementation.
 
 ## Conclusion
 
-In completing this assignment, I gained practical experience in designing and training a Deep Convolutional Generative Adversarial Network (DCGAN) for image generation tasks. By working on the CIFAR-10 dataset, I learned how to preprocess image data, define complex neural network architectures, and optimize models using adversarial training techniques. Additionally, evaluating the quality of generated images provided insights into the effectiveness of the DCGAN in capturing and generating realistic image samples.
+In conclusion, this project demonstrates the application of OpenCV for measuring the size of geometrical objects in a given image. By implementing object detection algorithms and size measurement techniques, we can accurately determine the size of various shapes present in the image. This project enhances our understanding of computer vision techniques and their practical applications in real-world scenarios.
 
 ## References
 
-- DCGAN Paper: [https://arxiv.org/abs/1511.06434](https://arxiv.org/abs/1511.06434)
-- PyTorch Documentation: [https://pytorch.org/docs/stable/index.html](https://pytorch.org/docs/stable/index.html)
-- CIFAR-10 Dataset: [https://www.cs.toronto.edu/~kriz/cifar.html](https://www.cs.toronto.edu/~kriz/cifar.html)
+- OpenCV Documentation: [https://opencv.org/](https://opencv.org/)
+- Python OpenCV Tutorial: [https://opencv-python-tutroals.readthedocs.io/en/latest/](https://opencv-python-tutroals.readthedocs.io/en/latest/)
