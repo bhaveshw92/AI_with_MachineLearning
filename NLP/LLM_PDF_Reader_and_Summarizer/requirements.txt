@@ -1,0 +1,11 @@
+langchain
+langchain-community
+sentence_transformers
+torch
+sentencepiece
+transformers
+accelerate
+pypdf
+tiktoken
+streamlit
+PyPDF2
